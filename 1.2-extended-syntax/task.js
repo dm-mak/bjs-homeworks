@@ -23,7 +23,7 @@ function getAverageMark(marks) {
 
   if (marks.length === 0) {
     averageMark = 0;
-  } else if (marks.length > 5 || marks.length <= 5) {
+  } else {
     marks.splice(5);
     calculationMark();
   }

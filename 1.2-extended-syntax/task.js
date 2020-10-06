@@ -1,7 +1,8 @@
+"use strict";
+
 function getResult(a, b, c) {
   // код для задачи №1 писать здесь
   // return x;
-  "use strict";
   let d = Math.pow(b, 2) - 4 * a * c;
   let x = [];
 
@@ -20,13 +21,10 @@ function getAverageMark(marks) {
   let averageMark;
   let amountMark = 0;
 
-  if (marks.length === 0 || marks === undefined) {
+  if (marks.length === 0) {
     averageMark = 0;
-  } else if (marks.length > 5) {
-    let rengeDelete = -marks.length + 5;
-    marks.splice(rengeDelete, -rengeDelete);
-    calculationMark();
-  } else if (marks.length <= 5) {
+  } else if (marks.length > 5 || marks.length <= 5) {
+    marks.splice(5);
     calculationMark();
   }
 
@@ -42,11 +40,8 @@ function getAverageMark(marks) {
 function askDrink(name, dateOfBirthday) {
   // код для задачи №3 писать здесь
   // return result;
-  let birthdayYear = dateOfBirthday.getFullYear();
-  let currentYear = new Date().getFullYear();
-  let age = currentYear - birthdayYear;
   let result;
-  if (age >= 18) {
+  if (new Date().getFullYear() - dateOfBirthday.getFullYear() >= 18) {
     result = `Не желаете ли олд-фэшн, ${name}?`;
   } else {
     result = `Сожалею, ${name}, но я не могу вам продать алкоголь. Зато могу предложить вам замечательный клюквенный компот!`;

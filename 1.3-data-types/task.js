@@ -18,16 +18,16 @@ function calculateTotalMortgage(percent, contribution, amount, date) {
     } else {
         switch (true) {
             case isNaN(percent):
-                alert(`В поле "проценты" не число`);
+                return `В поле "проценты" не число`;
                 break;
             case isNaN(contribution):
-                alert(`В поле "начальный платеж" не число`);
+                return `В поле "начальный платеж" не число`;
                 break;
             case isNaN(amount):
-                alert(`В поле "Общая стоимость" не число`);
+                return `В поле "Общая стоимость" не число`;
                 break;
             default:
-                alert(`Что-то введено неправильно`);
+                return `Что-то введено неправильно`;
                 break;
         }
     }
@@ -36,12 +36,19 @@ function calculateTotalMortgage(percent, contribution, amount, date) {
 function getGreeting(name) {
     // код для задачи №2 писать здесь
     // return greeting;
+
     let greeting;
-    if (name === null || name === undefined || name === "") {
-        greeting = `Привет, мир! Меня зовут Аноним`;
-        return greeting;
-    } else {
-        greeting = `Привет, мир! Меня зовут ${name}`;
-        return greeting;
+
+    function inputName() {
+        let altName;
+        if (!name || name === "") {
+            altName = 'Аноним';
+            return altName;
+        } else {
+            return name;
+        }
     }
+
+    greeting = `Привет, мир! Меня зовут ${inputName()}`;
+    return greeting;
 }

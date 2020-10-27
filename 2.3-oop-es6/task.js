@@ -82,7 +82,7 @@ class Library {
     }
 
     findBookBy(type, value) {
-        for (let i = 0; i < this.books.length; i++) {
+        for (let i = 0; i < this.books.length; i += 1) {
             if (this.books[i][type] === value) {
                 return this.books[i];
             }
@@ -130,7 +130,7 @@ class StudentLog {
         if (this[subject] == undefined) {
             return 0;
         } else {
-            for (let i = 0; i < this[subject].length; i++) {
+            for (let i = 0; i < this[subject].length; i += 1) {
                 countMark += this[subject][i]
             }
         }
@@ -142,7 +142,7 @@ class StudentLog {
         let sumCount = 0;
         for (let key in this) {
                 if (typeof this[key] === 'object') {
-                    for (let i = 0; i < this[key].length; i++) {
+                    for (let i = 0; i < this[key].length; i += 1) {
                         sumMarks += this[key][i]
                         sumCount++;
                     }
